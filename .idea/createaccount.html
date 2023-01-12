@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Below line is used for online Google font */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+h2{
+background-color: #FEFFED;
+padding: 30px 35px;
+margin: -10px -50px;
+text-align:center;
+border-radius: 10px 10px 0 0;
+}
+hr{
+margin: 10px -50px;
+border: 0;
+border-top: 1px solid #ccc;
+margin-bottom: 40px;
+}
+div.container{
+width: 900px;
+height: 610px;
+margin:35px auto;
+font-family: 'Raleway', sans-serif;
+}
+div.main{
+width: 300px;
+padding: 10px 50px 25px;
+border: 2px solid gray;
+border-radius: 10px;
+font-family: raleway;
+float:left;
+margin-top:50px;
+}
+input[type=text],input[type=password]{
+width: 100%;
+height: 40px;
+padding: 5px;
+margin-bottom: 25px;
+margin-top: 5px;
+border: 2px solid #ccc;
+color: #4f4f4f;
+font-size: 16px;
+border-radius: 5px;
+}
+label{
+color: #464646;
+text-shadow: 0 1px 0 #fff;
+font-size: 14px;
+font-weight: bold;
+}
+center{
+font-size:32px;
+}
+.note{
+color:red;
+}
+.valid{
+color:green;
+}
+.back{
+text-decoration: none;
+border: 1px solid rgb(0, 143, 255);
+background-color: rgb(0, 214, 255);
+padding: 3px 20px;
+border-radius: 2px;
+color: black;
+}
+input[type=button]{
+font-size: 16px;
+background: linear-gradient(#ffbc00 5%, #ffdd7f 100%);
+border: 1px solid #e5a900;
+color: #4E4D4B;
+font-weight: bold;
+cursor: pointer;
+width: 100%;
+border-radius: 5px;
+padding: 10px 0;
+outline:none;
+}
+input[type=button]:hover{
+background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
+}
+    </style>
+</head>
+<body>
+ <div class="container">
+    <div class="main">
+        <h2>Javascript Login Form Validation</h2>
+        <form id="form_id" method="post" name="myform">
+            <label>User Name :</label>
+            <input type="text" name="username" id="username"/>
+            <label>Password :</label>
+            <input type="password" name="password" id="password"/>
+
+            <a href="main.html">
+
+            <input type="button" value="SignUp" id="submit" onclick="validate()"/>
+            </a>
+
+        </form>
+
+
+
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<script>
+
+var container = document.getElementByclass("container");
+
+            var signupdata;
+            if(localStorage.getItem("signupdata")==null){
+            signupdata = []
+            }else{
+
+             signupdata = JSON.parse(localStorage.getItem("signupdata"));
+             }
+
+             function validate(){
+
+             var usersignupdata =
+             {
+             username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+             }
+             signupdata.push(usersignupdata);
+             localStorage.setItem(signupdata,JSON.stringfy(signupdata);
+             window.location.href = "main.html";
+             }
+
+
+
+   function makeNum(num, func) {
+  if (func === undefined) {
+		return num;
+	} else {
+		return func(num);
+	}
+}
+
+function zero(func) {
+	return makeNum(0,func);
+}
+function one(func) {
+	return makeNum(1,func);
+}
+function two(func) {
+	return makeNum(2,func);
+}
+function three(func) {
+	return makeNum(3,func);
+}
+function four(func) {
+	return makeNum(4,func);
+}
+function five(func) {
+	return makeNum(5,func);
+}
+function six(func) {
+	return makeNum(6,func);
+}
+function seven(func) {
+	return makeNum(7,func);
+}
+function eight(func) {
+	return makeNum(8,func);
+}
+function nine(func) {
+	return makeNum(9,func);
+}
+
+function plus(right) {
+  return function(left) { return left + right; };
+}
+function minus(right) {
+  return function(left) {
+		return left - right;
+	};
+}
+function times(right) {
+  return function(left) { return left * right; };
+}
+function dividedBy(right) {
+  return function(left) { return left / right; };
+}
+
+eight(minus(three()));
+six(dividedBy(two()));
+two(plus(five()));
+five(plus(two()));
+seven(times(five()));
+console.log(four(plus(nine())));
+console.log(usersignupdata);
+
+
+
+
+
+</script>
